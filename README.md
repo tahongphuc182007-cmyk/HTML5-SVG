@@ -96,9 +96,9 @@
     </style>
   </head>
   <body>
-    <h1>SVG Master Demo 2025</h1>
+    <h1>SVG Master Demo </h1>
     <p style="text-align: center; color: #555; font-size: 1.1rem">
-      Made in Vietnam - Vip pro cực mạnh!
+
     </p>
 
     <!-- ==================== 1-3, 5-9, 11-14 giữ nguyên ==================== -->
