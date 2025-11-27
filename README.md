@@ -685,178 +685,236 @@
 
     <!-- ==================== 15. Dark / Light Mode (NÂNG CẤP ĐỈNH CAO) ==================== -->
     <section>
-      <h2>15. Dark / Light Mode</h2>
-      <div style="text-align: center; padding: 30px 0">
-        <button
-          id="themeToggle"
-          style="
-            padding: 16px 32px;
-            font-size: 17px;
-            font-weight: 600;
-            border: 2px solid #1976d2;
-            border-radius: 50px;
-            background: transparent;
-            color: var(--text);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 14px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 6px 20px rgba(25, 118, 210, 0.25);
-          "
-        >
-          <span id="sunIcon">Chế độ sáng</span>
-          <span id="moonIcon" style="display: none">Chế độ tối</span>
-          <svg
-            id="toggleIcon"
-            width="26"
-            height="26"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-          >
-            <circle cx="12" cy="12" r="5" />
-            <path
-              d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"
-            />
+     <!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVG Master 2025 - Perfect Final</title>
+<style>
+  :root{--bg:#fafafa;--text:#111;--card:#fff;--glass:rgba(255,255,255,0.1);}
+  .dark{--bg:#0b0e17;--text:#e0e7ff;--card:#1a1f2e;--glass:rgba(10,15,40,0.7);}
+
+  body{
+    margin:0;padding:20px;background:var(--bg);color:var(--text);
+    font-family:system-ui,-apple-system,sans-serif;
+    min-height:100vh;transition:background 1s ease;
+    perspective:2000px;overflow:hidden;
+  }
+  h1{
+    text-align:center;font-size:3.6rem;margin:30px 0;
+    background:linear-gradient(90deg,#8b5cf6,#ec4899,#f59e0b,#10b981,#06b6d4);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  section{
+    margin:80px auto;max-width:1000px;padding:50px;background:var(--card);
+    border-radius:32px;box-shadow:0 20px 70px rgba(0,0,0,.25);
+    text-align:center;position:relative;overflow:hidden;
+  }
+
+  /* ==================== PHẦN 15 – HOÀN HẢO 100% ==================== */
+  .glass-card{
+    width:440px;height:260px;margin:40px auto;position:relative;
+    cursor:pointer;
+  }
+  .glass{
+    position:absolute;inset:0;border-radius:38px;
+    backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);
+    background:var(--glass);border:1px solid rgba(255,255,255,.2);
+    box-shadow:0 40px 100px rgba(0,0,0,.5);
+  }
+
+  .card{
+    width:100%;height:100%;position:relative;
+    transform-style:preserve-3d;
+    transition:transform 1.6s cubic-bezier(.68,-0.55,.27,1.55);
+  }
+  .card.flipped{transform:rotateY(180deg);}
+
+  .face{
+    position:absolute;inset:0;border-radius:38px;
+    backface-visibility:hidden;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;
+  }
+  .front{
+    background:linear-gradient(135deg,#ffeaa7,#74b9ff);
+  }
+  .back{
+    background:linear-gradient(135deg,#1e1b4b,#0f172a);
+    transform:rotateY(180deg);
+  }
+
+  /* QUAN TRỌNG: Nội dung không bị lật ngược */
+  .content{
+    backface-visibility:hidden;
+  }
+  .card.flipped .content{
+    transform:rotateY(180deg);
+  }
+
+  .sun-moon{width:120px;height:120px;}
+  .greeting{
+    font-size:42px;font-weight:900;letter-spacing:2px;
+    opacity:0;transform:translateY(30px);
+    transition:all 1.2s ease;
+  }
+  .greeting.show{opacity:1;transform:none;}
+
+  /* Mưa sao băng */
+  .shooting-stars{
+    position:fixed;inset:0;pointer-events:none;z-index:1;
+    opacity:0;transition:opacity 1.5s;
+  }
+  .dark .shooting-stars{opacity:1;}
+  .meteor{
+    position:absolute;width:2px;height:2px;background:#fff;
+    box-shadow:0 0 12px #fff;
+  }
+  .meteor::before{
+    content:'';position:absolute;top:0;left:0;
+    width:160px;height:2px;
+    background:linear-gradient(90deg,#fff,transparent);
+    transform:rotate(-45deg);transform-origin:left;
+    animation:meteor 4s linear infinite;
+  }
+  @keyframes meteor{
+    0%{transform:translateX(-300px) translateY(-100px) rotate(-45deg);opacity:0;}
+    15%{opacity:1;}
+    100%{transform:translateX(200vw) translateY(200vh) rotate(-45deg);opacity:0;}
+  }
+
+  .particles span{
+    position:absolute;width:12px;height:12px;border-radius:50%;
+    pointer-events:none;opacity:0;
+    animation:particle 1.5s ease-out forwards;
+  }
+  @keyframes particle{to{transform:translate(var(--x),var(--y)) scale(0);opacity:0;}}
+</style>
+</head>
+<body>
+
+<h1>SVG Master 2025</h1>
+<p style="text-align:center;font-size:1.5rem;opacity:.9;margin-bottom:80px;">
+  Bản đẹp nhất Việt Nam – Good Morning luôn hiện trước!
+</p>
+
+<section>
+  <h2>15. Dark / Light Mode – Perfect Final</h2>
+
+  <div class="glass-card" id="toggle">
+    <div class="glass"></div>
+    <div class="card" id="card">
+      <!-- MẶT SÁNG – HIỆN TRƯỚC -->
+      <div class="face front">
+        <div class="content">
+          <svg class="sun-moon" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="30" fill="#fbbf24"/>
+            <g stroke="#fbbf24" stroke-width="7" stroke-linecap="round">
+              <line x1="50" y1="8" x2="50" y2="0"/>
+              <line x1="50" y1="92" x2="50" y2="100"/>
+              <line x1="8" y1="50" x2="0" y2="50"/>
+              <line x1="92" y1="50" x2="100" y2="50"/>
+              <line x1="22" y1="22" x2="14" y2="14"/>
+              <line x1="78" y1="78" x2="86" y2="86"/>
+              <line x1="22" y1="78" x2="14" y2="86"/>
+              <line x1="78" y1="22" x2="86" y2="14"/>
+            </g>
           </svg>
-        </button>
-        <p style="margin-top: 16px; font-size: 15px; opacity: 0.75">
-          Tự động theo hệ thống • Lưu trạng thái vĩnh viễn
-        </p>
+          <div class="greeting" id="morning">Good Morning!</div>
+        </div>
       </div>
-    </section>
 
-    <script>
-      // === 4. Tương tác JS – Nâng cấp đỉnh cao ===
-      const dotGroup = document.getElementById("magicDot");
-      const txt = document.getElementById("txt");
-      const colors = [
-        "#ff5722",
-        "#e91e63",
-        "#9c27b0",
-        "#3f51b5",
-        "#00bcd4",
-        "#ff9800",
-      ];
+      <!-- MẶT TỐI -->
+      <div class="face back">
+        <div class="content">
+          <svg class="sun-moon" viewBox="0 0 100 100">
+            <path d="M52,15 A37,37 0 1,1 70,85 A47,47 0 0,0 52,15 Z" fill="#e0e0e0"/>
+          </svg>
+          <div class="greeting" id="night">Good Night!</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      dotGroup.style.cursor = "pointer";
-      dotGroup.addEventListener("click", () => {
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        dotGroup.children[0].setAttribute("fill", color);
-        txt.textContent = `Màu: ${color.toUpperCase()}`;
-        dotGroup.style.transform = "scale(1.4)";
-        setTimeout(() => (dotGroup.style.transform = "scale(1)"), 300);
-      });
+  <p style="font-size:21px;opacity:.9;margin-top:40px;">
+    Good Morning luôn hiện trước • Chữ & icon không bao giờ ngược • Mưa sao băng cực đẹp
+  </p>
 
-      document.getElementById("btnReset").addEventListener("click", () => {
-        dotGroup.children[0].setAttribute("fill", "#ff5722");
-        txt.textContent = "Click vào chấm cam kìa!";
-      });
+  <div class="particles" id="particles"></div>
+  <div class="shooting-stars" id="stars"></div>
+</section>
 
-      // === Vẽ tự do ===
-      const drawSvg = document.getElementById("drawArea"),
-        path = document.getElementById("p");
-      let d = "",
-        drawing = false;
-      const getPoint = (e) => {
-        const t = drawSvg.createSVGPoint();
-        t.x = e.clientX;
-        t.y = e.clientY;
-        return t.matrixTransform(drawSvg.getScreenCTM().inverse());
-      };
-      drawSvg?.addEventListener("pointerdown", (e) => {
-        drawSvg.setPointerCapture(e.pointerId);
-        drawing = true;
-        const p = getPoint(e);
-        d = `M${p.x} ${p.y}`;
-        path.setAttribute("d", d);
-      });
-      drawSvg?.addEventListener("pointermove", (e) => {
-        if (!drawing) return;
-        const p = getPoint(e);
-        d += ` L${p.x} ${p.y}`;
-        path.setAttribute("d", d);
-      });
-      drawSvg?.addEventListener("pointerup", () => (drawing = false));
-      document.getElementById("clear")?.addEventListener("click", () => {
-        d = "M20 80";
-        path.setAttribute("d", d);
-      });
+<script>
 
-      // === Nút Like burst ===
-      let liked = false;
-      document.getElementById("likeBtn").addEventListener("click", () => {
-        const h = document.getElementById("heartPath");
-        if (!liked) {
-          h.setAttribute("fill", "#e91e63");
-          h.style.transform = "scale(1.4)";
-          h.style.transition = "0.4s";
-          setTimeout(() => (h.style.transform = "scale(1)"), 400);
-          for (let i = 0; i < 12; i++) {
-            const c = document.createElementNS(
-              "http://www.w3.org/2000/svg",
-              "circle"
-            );
-            c.setAttribute("cx", 50);
-            c.setAttribute("cy", 50);
-            c.setAttribute("r", 4);
-            c.setAttribute("fill", "#e91e63");
-            likeBtn.querySelector("svg").appendChild(c);
-            const a = i * 30,
-              v = 4 + Math.random() * 4;
-            c.innerHTML = `<animate attributeName="cx" from="50" to="${
-              50 + v * Math.cos((a * Math.PI) / 180) * 10
-            }" dur="0.8s" fill="freeze"/>
-                           <animate attributeName="cy" from="50" to="${
-                             50 + v * Math.sin((a * Math.PI) / 180) * 10
-                           }" dur="0.8s" fill="freeze"/>
-                           <animate attributeName="opacity" from="1" to="0" dur="0.8s" begin="0.2s"/>`;
-            setTimeout(() => c.remove(), 1000);
-          }
-        } else h.setAttribute("fill", "#ccc");
-        liked = !liked;
-      });
+const body = document.body;
+const card = document.getElementById('card');
+const morning = document.getElementById('morning');
+const night = document.getElementById('night');
+const toggle = document.getElementById('toggle');
+const particles = document.getElementById('particles');
+const stars = document.getElementById('stars');
 
-      // === Dark Mode Toggle – Đỉnh cao UX ===
-      const body = document.body;
-      const themeToggle = document.getElementById("themeToggle");
-      const sunIcon = document.getElementById("sunIcon");
-      const moonIcon = document.getElementById("moonIcon");
-      const toggleIcon = document.getElementById("toggleIcon");
+// Mưa sao băng
+function startMeteors(){
+  if(!body.classList.contains('dark')){stars.innerHTML='';return;}
+  setInterval(()=>{
+    const m = document.createElement('div');
+    m.className='meteor';
+    m.style.left = Math.random()*100 + 'vw';
+    m.style.top = Math.random()*40 + 'vh';
+    m.style.animationDuration = (Math.random()*3 + 3)+'s';
+    stars.appendChild(m);
+    setTimeout(()=>m.remove(),8000);
+  },1200);
+}
 
-      const setDark = () => {
-        body.classList.add("dark");
-        sunIcon.style.display = "none";
-        moonIcon.style.display = "inline";
-        toggleIcon.innerHTML =
-          '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
-        localStorage.setItem("theme", "dark");
-      };
+// Particle
+function spark(x,y){
+  for(let i=0;i<40;i++){
+    const p = document.createElement('span');
+    const a = Math.PI*2*i/40;
+    const v = 7+Math.random()*10;
+    p.style.left=x+'px'; p.style.top=y+'px';
+    p.style.setProperty('--x',Math.cos(a)*v*70+'px');
+    p.style.setProperty('--y',Math.sin(a)*v*70+'px');
+    p.style.background = body.classList.contains('dark')?'#93c5fd':'#fbbf24';
+    particles.appendChild(p);
+    setTimeout(()=>p.remove(),1800);
+  }
+}
 
-      const setLight = () => {
-        body.classList.remove("dark");
-        sunIcon.style.display = "inline";
-        moonIcon.style.display = "none";
-        toggleIcon.innerHTML =
-          '<circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/>';
-        localStorage.setItem("theme", "light");
-      };
+// Áp dụng theme
+function setTheme(dark){
+  if(dark){
+    body.classList.add('dark');
+    card.classList.add('flipped');
+    night.classList.add('show');
+    morning.classList.remove('show');
+    startMeteors();
+  }else{
+    body.classList.remove('dark');
+    card.classList.remove('flipped');
+    morning.classList.add('show');
+    night.classList.remove('show');
+    stars.innerHTML='';
+  }
+}
 
-      if (
-        localStorage.getItem("theme") === "dark" ||
-        (!localStorage.getItem("theme") &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        setDark();
-      } else {
-        setLight();
-      }
+// ƯU TIÊN GOOD MORNING HIỆN TRƯỚC (dù hệ thống dark)
+const saved = localStorage.getItem('theme');
+const isDark = saved === 'dark';
 
-      themeToggle.addEventListener("click", () => {
-        body.classList.contains("dark") ? setLight() : setDark();
-      });
-    </script>
-  </body>
+setTheme(isDark);
+setTimeout(()=> isDark ? night.classList.add('show') : morning.classList.add('show'), 100);
+
+toggle.addEventListener('click',(e)=>{
+  const rect = toggle.getBoundingClientRect();
+  spark(e.clientX-rect.left, e.clientY-rect.top);
+  
+  const willDark = !body.classList.contains('dark');
+  setTheme(willDark);
+  localStorage.setItem('theme', willDark?'dark':'light');
+});
+</script>
+</body>
 </html>
