@@ -99,7 +99,6 @@
     <h1>SVG Demo </h1>
     <p style="text-align: center; color: #555; font-size: 1.1rem;"></p>
 
-    <!-- ==================== 1-3, 5-9, 11-14 giữ nguyên ==================== -->
     <section>
       <h2>1. Hình cơ bản</h2>
       <div class="row">
@@ -146,8 +145,6 @@
         </div>
       </div>
     </section>
-
-    <!-- ==================== 4. Tương tác JavaScript (ĐÃ NÂNG CẤP SIÊU ĐẸP) ==================== -->
     <section>
       <h2>4. Tương tác JavaScript</h2>
       <div class="row">
@@ -196,7 +193,6 @@
       </div>
     </section>
 
-    <!-- ==================== 6-9 giữ nguyên ==================== -->
     <section>
       <h2>6. Responsive SVG</h2>
       <div class="row">
