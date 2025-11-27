@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SVG Master Demo</title>
+    <title>SVG Master Demo 2025 - Vip Pro</title>
     <style>
       :root {
         --bg: #fafafa;
@@ -19,70 +19,90 @@
           --border: #30363d;
         }
       }
+      .dark {
+        --bg: #0d1117;
+        --text: #e6edf3;
+        --card: #161b22;
+        --border: #30363d;
+      }
       body {
-        font-family: system-ui, sans-serif;
+        font-family: system-ui, -apple-system, sans-serif;
         margin: 0;
         padding: 20px;
         background: var(--bg);
         color: var(--text);
         line-height: 1.6;
-        transition: 0.4s;
+        transition: background 0.4s, color 0.4s;
       }
       h1 {
         text-align: center;
         margin-bottom: 10px;
+        font-size: 2.8rem;
+        background: linear-gradient(90deg, #1976d2, #9c27b0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
       }
       h2 {
         color: #1976d2;
+        margin-top: 0;
       }
       section {
-        margin: 30px 0;
-        padding: 20px;
+        margin: 40px 0;
+        padding: 24px;
         background: var(--card);
         border: 1px solid var(--border);
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        transition: 0.3s;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s;
       }
       section:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
       }
       .row {
         display: flex;
         flex-wrap: wrap;
-        gap: 24px;
-        align-items: start;
+        gap: 28px;
+        align-items: flex-start;
       }
       .box {
         flex: 1 1 360px;
       }
       button {
-        padding: 10px 16px;
+        padding: 12px 20px;
         border: none;
         border-radius: 12px;
         background: #1976d2;
         color: white;
         cursor: pointer;
         font-weight: 600;
+        transition: 0.3s;
       }
       button:hover {
         background: #1565c0;
+        transform: translateY(-2px);
       }
       svg {
         max-width: 100%;
         height: auto;
         background: #fff;
         padding: 12px;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+      .dark svg {
+        background: #1e1e2e;
       }
     </style>
   </head>
   <body>
-    <h1>SVG Master Demo</h1>
-    <p style="text-align: center; color: #555">Vip pro</p>
+    <h1>SVG Master Demo 2025</h1>
+    <p style="text-align: center; color: #555; font-size: 1.1rem">
+      Made in Vietnam - Vip pro cực mạnh!
+    </p>
 
+    <!-- ==================== 1-3, 5-9, 11-14 giữ nguyên ==================== -->
     <section>
       <h2>1. Hình cơ bản</h2>
       <div class="row">
@@ -203,38 +223,76 @@
       </div>
     </section>
 
+    <!-- ==================== 4. Tương tác JavaScript (ĐÃ NÂNG CẤP SIÊU ĐẸP) ==================== -->
     <section>
       <h2>4. Tương tác JavaScript</h2>
       <div class="row">
         <div class="box">
-          <svg id="interactiveSvg" viewBox="0 0 300 120">
+          <svg
+            id="interactiveSvg"
+            viewBox="0 0 320 140"
+            style="background: #f8f9fa; border-radius: 16px"
+          >
+            <defs>
+              <radialGradient id="glow">
+                <stop offset="0%" stop-color="#fff" />
+                <stop offset="100%" stop-color="#ff9800" />
+              </radialGradient>
+            </defs>
             <rect
-              x="8"
-              y="8"
-              width="120"
-              height="104"
-              rx="8"
+              x="10"
+              y="20"
+              width="130"
+              height="100"
+              rx="16"
               fill="#fff3e0"
-              stroke="#bf360c"
-              stroke-width="2"
+              stroke="#ff6d00"
+              stroke-width="3"
             />
-            <circle
-              id="dot"
-              cx="200"
-              cy="60"
-              r="20"
-              fill="#ff6f00"
-              style="cursor: pointer"
-            />
-            <text id="txt" x="160" y="100" font-size="12">
-              Click the orange circle
+            <text
+              x="75"
+              y="70"
+              text-anchor="middle"
+              font-size="14"
+              font-weight="600"
+              fill="#d84315"
+            >
+              Hover me!
+            </text>
+
+            <g id="magicDot">
+              <circle cx="230" cy="70" r="28" fill="#ff5722" opacity="0.9" />
+              <circle cx="230" cy="70" r="38" fill="url(#glow)" opacity="0.4" />
+              <circle cx="230" cy="70" r="12" fill="#fff" opacity="0.6">
+                <animate
+                  attributeName="r"
+                  values="12;16;12"
+                  dur="2s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+            </g>
+
+            <text
+              id="txt"
+              x="230"
+              y="115"
+              text-anchor="middle"
+              font-size="13"
+              fill="#555"
+              font-weight="500"
+            >
+              Click vào chấm cam kìa!
             </text>
           </svg>
         </div>
-        <div class="box"><button id="btnReset">Reset</button></div>
+        <div class="box">
+          <button id="btnReset">Reset đẹp lung linh</button>
+        </div>
       </div>
     </section>
 
+    <!-- ==================== 5. Vẽ tự do (giữ nguyên) ==================== -->
     <section>
       <h2>5. Vẽ tự do bằng chuột</h2>
       <div class="row">
@@ -257,6 +315,7 @@
       </div>
     </section>
 
+    <!-- ==================== 6-9 giữ nguyên ==================== -->
     <section>
       <h2>6. Responsive SVG</h2>
       <div class="row">
@@ -394,52 +453,82 @@
       </div>
     </section>
 
+    <!-- ==================== 10. ClipPath & Mask (NÂNG CẤP SIÊU NGHỆ) ==================== -->
     <section>
       <h2>10. ClipPath & Mask</h2>
       <div class="row">
         <div class="box">
-          <svg viewBox="0 0 420 160">
+          <svg viewBox="0 0 440 180">
             <defs>
-              <clipPath id="heart">
+              <clipPath id="heartClip">
                 <path
-                  d="M210,40 C170,10 130,30 130,60 130,100 210,130 210,130 210,130 290,100 290,60 290,30 250,10 210,40Z"
+                  d="M220,50 C180,10 130,30 130,70 C130,120 220,160 220,160 C220,160 310,120 310,70 C310,30 260,10 220,50"
                 />
               </clipPath>
-              <mask id="love">
-                <rect width="100%" height="100%" fill="white" />
+              <linearGradient id="loveGrad">
+                <stop offset="0%" stop-color="#fff" />
+                <stop offset="100%" stop-color="#e0e0e0" />
+              </linearGradient>
+              <mask id="loveMask">
+                <rect width="100%" height="100%" fill="#fff" />
                 <text
                   x="50%"
-                  y="55%"
-                  font-size="48"
+                  y="58%"
+                  font-size="68"
                   font-weight="900"
                   text-anchor="middle"
                   fill="black"
+                  font-family="system-ui"
+                >
+                  LOVE
+                </text>
+                <text
+                  x="50%"
+                  y="58%"
+                  font-size="68"
+                  font-weight="900"
+                  text-anchor="middle"
+                  fill="url(#loveGrad)"
+                  opacity="0.4"
                 >
                   LOVE
                 </text>
               </mask>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="8" result="coloredBlur" />
+                <feMerge>
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="coloredBlur" />
+                </feMerge>
+              </filter>
             </defs>
+            <g filter="url(#glow)">
+              <image
+                href="https://picsum.photos/600/400?random=1"
+                x="30"
+                y="20"
+                width="180"
+                height="140"
+                clip-path="url(#heartClip)"
+                preserveAspectRatio="xMidYMid slice"
+              />
+            </g>
             <image
-              href="https://picsum.photos/400/300"
-              x="20"
+              href="https://picsum.photos/600/400?random=2"
+              x="230"
               y="20"
               width="180"
-              height="120"
-              clip-path="url(#heart)"
-            />
-            <image
-              href="https://picsum.photos/400/300?random=9"
-              x="220"
-              y="20"
-              width="180"
-              height="120"
-              mask="url(#love)"
+              height="140"
+              mask="url(#loveMask)"
+              preserveAspectRatio="xMidYMid slice"
             />
           </svg>
         </div>
       </div>
     </section>
 
+    <!-- 11-14 giữ nguyên đẹp sẵn -->
     <section>
       <h2>11. Icon System (symbol + use)</h2>
       <div class="row">
@@ -460,8 +549,9 @@
           </svg>
           <div style="display: flex; gap: 30px; justify-content: center">
             <svg width="60" height="60" fill="#e91e63">
-              <use href="#heart" /></svg
-            ><svg width="60" height="60" fill="#ff9800">
+              <use href="#heart" />
+            </svg>
+            <svg width="60" height="60" fill="#ff9800">
               <use href="#star" />
             </svg>
           </div>
@@ -594,27 +684,79 @@
       </div>
     </section>
 
+    <!-- ==================== 15. Dark / Light Mode (NÂNG CẤP ĐỈNH CAO) ==================== -->
     <section>
-      <h2>15. Dark Mode Toggle</h2>
-      <div style="text-align: center">
-        <button id="themeToggle">Chuyển Dark / Light</button>
+      <h2>15. Dark / Light Mode</h2>
+      <div style="text-align: center; padding: 30px 0">
+        <button
+          id="themeToggle"
+          style="
+            padding: 16px 32px;
+            font-size: 17px;
+            font-weight: 600;
+            border: 2px solid #1976d2;
+            border-radius: 50px;
+            background: transparent;
+            color: var(--text);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 6px 20px rgba(25, 118, 210, 0.25);
+          "
+        >
+          <span id="sunIcon">Chế độ sáng</span>
+          <span id="moonIcon" style="display: none">Chế độ tối</span>
+          <svg
+            id="toggleIcon"
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <circle cx="12" cy="12" r="5" />
+            <path
+              d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"
+            />
+          </svg>
+        </button>
+        <p style="margin-top: 16px; font-size: 15px; opacity: 0.75">
+          Tự động theo hệ thống • Lưu trạng thái vĩnh viễn
+        </p>
       </div>
     </section>
 
     <script>
-      // Tương tác vòng tròn màu + reset
-      document.getElementById("dot")?.addEventListener("click", () => {
-        const c = ["#ff6f00", "#d32f2f", "#7b1fa2", "#00796b", "#ff6f00"];
-        const i = Math.floor(Math.random() * c.length);
-        dot.setAttribute("fill", c[i]);
-        txt.textContent = "Color: " + c[i];
-      });
-      document.getElementById("btnReset")?.addEventListener("click", () => {
-        dot.setAttribute("fill", "#ff6f00");
-        txt.textContent = "Click the orange circle";
+      // === 4. Tương tác JS – Nâng cấp đỉnh cao ===
+      const dotGroup = document.getElementById("magicDot");
+      const txt = document.getElementById("txt");
+      const colors = [
+        "#ff5722",
+        "#e91e63",
+        "#9c27b0",
+        "#3f51b5",
+        "#00bcd4",
+        "#ff9800",
+      ];
+
+      dotGroup.style.cursor = "pointer";
+      dotGroup.addEventListener("click", () => {
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        dotGroup.children[0].setAttribute("fill", color);
+        txt.textContent = `Màu: ${color.toUpperCase()}`;
+        dotGroup.style.transform = "scale(1.4)";
+        setTimeout(() => (dotGroup.style.transform = "scale(1)"), 300);
       });
 
-      // Vẽ tự do
+      document.getElementById("btnReset").addEventListener("click", () => {
+        dotGroup.children[0].setAttribute("fill", "#ff5722");
+        txt.textContent = "Click vào chấm cam kìa!";
+      });
+
+      // === Vẽ tự do ===
       const drawSvg = document.getElementById("drawArea"),
         path = document.getElementById("p");
       let d = "",
@@ -638,15 +780,13 @@
         d += ` L${p.x} ${p.y}`;
         path.setAttribute("d", d);
       });
-      drawSvg?.addEventListener("pointerup", () => {
-        drawing = false;
-      });
+      drawSvg?.addEventListener("pointerup", () => (drawing = false));
       document.getElementById("clear")?.addEventListener("click", () => {
         d = "M20 80";
         path.setAttribute("d", d);
       });
 
-      // Nút Like burst
+      // === Nút Like burst ===
       let liked = false;
       document.getElementById("likeBtn").addEventListener("click", () => {
         const h = document.getElementById("heartPath");
@@ -668,24 +808,56 @@
             const a = i * 30,
               v = 4 + Math.random() * 4;
             c.innerHTML = `<animate attributeName="cx" from="50" to="${
-              50 + v * Math.cos(((a * Math.PI) / 180) * Math.PI) * 10
+              50 + v * Math.cos((a * Math.PI) / 180) * 10
             }" dur="0.8s" fill="freeze"/>
-                   <animate attributeName="cy" from="50" to="${
-                     50 + v * Math.sin(((a * Math.PI) / 180) * Math.PI) * 10
-                   }" dur="0.8s" fill="freeze"/>
-                   <animate attributeName="opacity" from="1" to="0" dur="0.8s" begin="0.2s"/>`;
+                           <animate attributeName="cy" from="50" to="${
+                             50 + v * Math.sin((a * Math.PI) / 180) * 10
+                           }" dur="0.8s" fill="freeze"/>
+                           <animate attributeName="opacity" from="1" to="0" dur="0.8s" begin="0.2s"/>`;
             setTimeout(() => c.remove(), 1000);
           }
         } else h.setAttribute("fill", "#ccc");
         liked = !liked;
       });
 
-      // Dark mode
-      document
-        .getElementById("themeToggle")
-        .addEventListener("click", () =>
-          document.body.classList.toggle("dark")
-        );
+      // === Dark Mode Toggle – Đỉnh cao UX ===
+      const body = document.body;
+      const themeToggle = document.getElementById("themeToggle");
+      const sunIcon = document.getElementById("sunIcon");
+      const moonIcon = document.getElementById("moonIcon");
+      const toggleIcon = document.getElementById("toggleIcon");
+
+      const setDark = () => {
+        body.classList.add("dark");
+        sunIcon.style.display = "none";
+        moonIcon.style.display = "inline";
+        toggleIcon.innerHTML =
+          '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+        localStorage.setItem("theme", "dark");
+      };
+
+      const setLight = () => {
+        body.classList.remove("dark");
+        sunIcon.style.display = "inline";
+        moonIcon.style.display = "none";
+        toggleIcon.innerHTML =
+          '<circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/>';
+        localStorage.setItem("theme", "light");
+      };
+
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        setDark();
+      } else {
+        setLight();
+      }
+
+      themeToggle.addEventListener("click", () => {
+        body.classList.contains("dark") ? setLight() : setDark();
+      });
     </script>
   </body>
 </html>
