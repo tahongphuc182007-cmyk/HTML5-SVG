@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="vi">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SVG Master Demo 2025 - Vip Pro</title>
+    <title>SVG Master Demo </title>
     <style>
       :root {
         --bg: #fafafa;
